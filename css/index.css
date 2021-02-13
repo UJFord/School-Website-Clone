@@ -1,0 +1,168 @@
+/* FONT */
+@font-face{
+	font-family: Bungee-Inline;
+	src: url('/font/BungeeInline-Regular.ttf');
+}
+@font-face{
+	font-family: Righteous;
+	src: url('/font/Righteous-Regular.ttf');
+}
+/* EVERYTHING */
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+/* HTML BODY */
+html, body{
+ width: 100%;
+ height: 100%;
+ overflow-y: hidden;
+}
+body{
+	background: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+/* MAIN BG */
+#main-bg{
+	z-index: -20;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	opacity: 0.8;
+	background: url('/img/msu.jpg') no-repeat center;
+	background-size: cover;
+}
+
+/* HEADER */
+header{
+	/* border: 3px green dashed; */
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 20%;
+	background-image: linear-gradient(180deg, #92a8d1, #00ccff00);
+	color: #667292;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: Bungee-Inline;
+}
+/* logo */
+#main-logo{
+	border-radius: 40px;
+	box-shadow: 0 2px 5px black;
+	margin-top: 10px;
+	height: 80px;
+	width: 80px;
+	background-image: url('/img/pic_quark_1612061654408.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+/* title */
+#main-title{
+	margin: 5px 20px;
+	color: #dfe6ec/* #bccad6 *//* #f1e3dd#8d9db6#ddd4d0 */;
+	text-shadow: 0 2px 2px black;
+	opacity: 0.9;
+}
+#main-title span{
+	font-size: 40px;
+	color: #f1e3dd;
+}
+/* onmobile */
+@media screen and (max-width: 500px){
+	header{
+		flex-direction: column;
+	}
+}
+
+/* LOGIN */
+/* container */
+#card{
+	background: #f1e3dd;
+	border-radius: 5px;
+	box-shadow: 0 1px 3px black;
+	opacity: 0.8;
+}
+#card:hover{
+	opacity: 0.9;
+}
+/* login button */
+#card a{
+	text-decoration: none;
+}
+#card a:active{
+	opacity: 0.8;
+}
+#card a:visited, #card a:focus{
+	outline: none;
+	text-decoration: none;
+	color: #f1e3dd;
+}
+#login-btn{
+	opacity: 1.0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: Righteous;
+	border-radius: 2px;
+	padding: 5px 20px;
+	margin: 20px;
+	min-height: 50px;
+	min-width: 200px;
+	background: #8d9db6;
+	color: #f1e3dd;
+	font-size: 25px;
+	text-shadow: 0 1px 1px black;
+}
+/* text and google logo */
+#login-btn h5{opacity: 1.0;}
+#login-btn div{
+	opacity: 1.0;
+	height: 50px;
+	width: 100px;
+	margin-left: 20px;
+	background-image: url('/img/google.png');
+	background-size: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+/* FOOTER */
+footer{
+	width: 250px;
+	margin-top: 5px;
+	color: #f1e3dd;
+	border-top: 1px #c4bebb solid;
+	font-size: 12px;
+	font-family: Righteous;
+	text-align: center;
+	text-shadow: 0 1px 1px black;
+}
+footer a{
+	color: blue;
+	text-shadow: none;
+}
+footer a:hover{
+	color: red;
+}
+footer a:active{
+	opacity: 0.6;
+}
+footer a:visited{
+	color: blue;
+}
+footer a:focus{
+	outline: none;
+}
