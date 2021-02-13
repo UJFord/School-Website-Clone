@@ -1,0 +1,17 @@
+/* FONTS */
+@font-face{
+	font-family: Ubuntu;
+	src: url('/font/Ubuntu-Regular.ttf');
+}
+
+/* EVERYTHING */
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+/* HTML BODY */
+
+/* MAIN BG */
