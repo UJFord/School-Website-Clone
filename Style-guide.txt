@@ -1,0 +1,8 @@
+Top-most Bg Color: #D73925, #DD4B39
+
+Left Nav Color: #222D32
+	Searck BG: #374850
+	Online Icon: #3C763D
+	Header Bg: #1A2226
+	Home Bg: #1E282C
+	Dropdown Bg: #2C3B41
