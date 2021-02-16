@@ -4,15 +4,30 @@ let isMobile = window.innerWidth < 800;
 let pcMenu = true;
 let mobileMenu = false;
 
-
-// MENU //
 //all menu elements
 let menuElmnts = document.querySelectorAll('.menu-lmnt');
 //menu button
 let menuBtn = document.getElementById('menu-button');
+//open student nav list
+let navBtn = document.querySelector('#student-nav');
+// toggling profile
+//get profile elements
+let profElmnts = document.querySelectorAll('.profile-lmnt');
+console.log(profElmnts)
+//profile toggle button
+let profBtn = document.querySelector('#profile-button');
+//main section container
+let main = document.querySelector('#in-main-container');
+
+
+
+
+
+// MENU
 //toggle menu
 menuBtn.addEventListener('click', toggleMenu, false);
 function toggleMenu(){
+	// open menu
 	for(let i = 0 ; i < menuElmnts.length ; i++){
 		menuElmnts[i].classList.toggle('openMenu')
 	}
@@ -24,11 +39,13 @@ function toggleMenu(){
 		document.querySelector('#student-nav .arrow').classList.remove('openStudentNav');
 		document.querySelector('#nav-list').classList.remove('openStudentNav');
 	}
-	
+	//close profile
+	for (let i = 0; i < profElmnts.length; i++) {
+		profElmnts[i].classList.remove('openProfile')
+	}
 }
 
-//open student nav list
-let navBtn = document.querySelector('#student-nav');
+//SIDEBAR NAV
 navBtn.addEventListener('click',()=>{
 	// when menu is not minimized on pc
 	if(!pcMenu && !isMobile){
@@ -41,9 +58,14 @@ navBtn.addEventListener('click',()=>{
 	document.querySelector('#nav-list').classList.toggle('openStudentNav');
 } ,false)
 
+
+
 //resize menu every window resize
 window.addEventListener("resize", resizing);
-resizing();	//resize on start
+	resizing();
+document.onload = () => {
+	resizing();
+}//resize on start
 
 // Computing nav height
 function resizing(){
@@ -61,18 +83,28 @@ function resizing(){
 }
 
 
-// toggling profile
-//get profile elements
-let profElmnts = document.querySelectorAll('.profile-lmnt');
-//profile toggle button
-let profBtn = document.querySelector('#profile-button');
 
-//onlick 
+
+//open Profile
 profBtn.addEventListener('click', openProfile,false);
 function openProfile(){
+	// open profile
 	for (let i = 0; i < profElmnts.length; i++) {
 		profElmnts[i].classList.toggle('openProfile')
 	}
-	console.log('clixked')
-	console.log(profElmnts)
+	
+	//close menu
+	if(isMobile){
+		for(let i = 0 ; i < menuElmnts.length ; i++){
+			menuElmnts[i].classList.remove('openMenu')
+		}
+	}
 }
+
+main.addEventListener('click', ()=>{
+	
+	// close profile
+	for (let i = 0; i < profElmnts.length; i++) {
+		profElmnts[i].classList.remove('openProfile')
+	}
+}, false)
