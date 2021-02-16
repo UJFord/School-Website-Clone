@@ -21,6 +21,7 @@ html, body{
 	/* min-height: 500px; */
 	overflow-x: hidden;
 	font-family: 'Open Sans', sans-serif;
+	/* font-family: Ubuntu; */
 }
 body{
 	overflow-y: scroll;
@@ -72,10 +73,13 @@ header{
 	position: relative;
 }
 #title-container h1{
+	/* border: 1px white dashed; */
 	text-align: center;
 	font-size: 14px;
 	min-width: 25vw;
 	position: absolute;
+	margin-left: 0vw;
+	transition-duration: 500ms;
 }
 @media screen and (min-width: 800px){
 	#title-container.openMenu{
@@ -84,14 +88,15 @@ header{
 		max-width: 7vw;
 	}
 	#title-container.openMenu h1{
+		margin-left: 7vw;
 		min-width: 25vw;
 		animation: showSchool 10s linear infinite;
 		position: absolute;
-		left: 0px;
+		left: 0;
 	}
 	@keyframes showSchool{
 		from{left:0;}
-		to{left:-25vw;}
+		to{left:-32vw;}
 	}
 }
 /* menu, profile button */
@@ -132,7 +137,7 @@ header{
 	/* border: 3px green dashed; */
 	width: 15px;
 	height: 15px;
-	background-image: url('/icon/menu-white.svg');
+	background-image: url('/icon/w/menu.svg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -151,14 +156,19 @@ header{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background: transparent;
+	/* position: relative; */
+}
+#profile-button.openProfile{
+	background: #D73925;
 }
 /* profile icon */
 #profile-button .icon{
 	/* border: 3px yellow dashed; */
-	margin-right: 5px;
+	margin: 0 5px 0 10px;
 	min-height: 25px;
 	min-width: 25px;
-	background-image: url('/img/pic_quark_1612061676784.jpg');
+	background-image: url('/img/logo.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -256,7 +266,7 @@ header{
 	margin: 15px;
 	min-height: 45px;
 	min-width: 45px;
-	background-image: url('/img/pic_quark_1612061676784.jpg');
+	background-image: url('/img/logo.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -329,7 +339,7 @@ header{
 	margin: 5px 5% 5px 5%;
 	min-height: 15px;
 	min-width: 15px;
-	background-image: url('/icon/search.svg');
+	background-image: url('/icon/w/srch.svg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -381,7 +391,7 @@ header{
 	margin-right: 10px;
 	min-height: 15px;
 	min-width: 15px;
-	background-image: url('/icon/home-white.svg');
+	background-image: url('/icon/w/home.svg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -403,7 +413,7 @@ header{
 	margin-right: 10px;
 	min-height: 15px;
 	min-width: 15px;
-	background-image: url('/icon/student-white.svg');
+	background-image: url('/icon/w/student.svg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -415,8 +425,8 @@ header{
 	right: 25px;
 	min-height: 10px;
 	min-width: 10px;
-	transform: rotate(180deg);
-	background-image: url('/icon/arrow.svg');
+	transform: rotate(0deg);
+	background-image: url('/icon/w/arrow.svg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -424,7 +434,7 @@ header{
 }
 #student-nav .arrow.openStudentNav{
 	transition-duration: 500ms;
-	transform: rotate(90deg);
+	transform: rotate(-90deg);
 }
 @media screen and (min-width: 800px){
 	#menu-main-container.openMenu #home-nav .icon, #menu-main-container.openMenu #student-nav .icon{
@@ -467,19 +477,125 @@ header{
 	background-position: center;
 }
 #nav-list .cor .icon{
-	background-image: url('/icon/cor-white.svg');
+	background-image: url('/icon/w/cor.svg');
 }
 #nav-list .e-lrning .icon{
-	background-image: url('/icon/vle-white.svg');
+	background-image: url('/icon/w/vle.svg');
 }
 #nav-list .e-lib .icon{
-	background-image: url('/icon/elib-white.svg');
+	background-image: url('/icon/w/elib.svg');
 }
 #nav-list .grades .icon{
-	background-image: url('/icon/grades-white.svg');
+	background-image: url('/icon/w/grades.svg');
 }
 #nav-list .inc .icon{
-	background-image: url('/icon/inc-white.svg');
+	background-image: url('/icon/w/inc.svg');
+}
+
+
+/* PROFILE SECTION */
+#profile-section{
+	z-index: 1000;
+	position: absolute;
+	top: 55px;
+	right: 15px;
+	/* border: 3px gold dashed; */
+	/* box-shadow: 0 0 10px #757575; */
+	border-radius: 2px;
+	background: #DD4B39;
+	max-height: 0;
+	max-width: 0;/* 
+	max-height: 230px;
+	max-width: 250px; */
+	overflow: hidden;
+	transition-duration: 250ms;
+}
+#profile-section.openProfile{
+	transition-duration: 250ms;
+	max-height: 230px;
+	max-width: 250px;
+}
+/* upper */
+#profile-section .top{
+	border: 1px #c3c3c3 solid;
+	border-top: 2px #fff solid;
+	border-bottom: 0;
+	min-height: 150px;
+	min-width: 250px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+/* picture */
+#profile-section .top .pic{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 80px;
+	width: 80px;
+	overflow: hidden;
+}
+#profile-section .top .pic img{
+	border: 3px orange solid;
+	border-radius: 40px;
+	height: 80px;
+	width: 80px;
+}
+#profile-section .top p{
+	margin-top: 15px;
+	max-width: 100%;
+	z-index: 2000;
+	font-size: 13px;
+}
+/* lower */
+#profile-section .bot{
+	border: 1px #c3c3c3 solid;
+	min-height: 100px;
+	min-width: 250px;
+	background: #fff;
+}
+/* title */
+#profile-section .bot .title{
+	/* border: 1px black solid; */
+	color: #000;
+	font-size: 0.9rem;
+	display: flex;
+	align-items: center;
+	height: 30px;
+	padding-left: 18px;
+	border-radius: 5px;
+	box-shadow: 0 3px #a2a8aa;
+	width: 100%;
+}
+/* navs */
+#profile-section .bot .navs{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 50px;
+	width: 100%;
+	font-size: 0.9rem;
+	border-bottom: 2px #c3c3c3 solid;
+	border-radius: 1px;
+}
+#profile-section .bot .navs .profile{
+	width: 40%;
+}
+#profile-section .bot .navs .profile button{
+	padding: 8px 13px;
+	border: 1px #c7c7c7 solid;
+	text-decoration: none;
+	color: #000;
+	background: transparent;
+}
+#profile-section .bot .navs .profile button:focus{
+	outline: none;
+}
+#profile-section .bot .navs .logout{
+	width: 40%;
+	display: flex;
+	flex-direction: row-reverse;
 }
 
 
@@ -535,7 +651,7 @@ header{
 .draft{
 	border: 3px green solid;
 	background: white;
-	width: 100px;
+	width: 300px;
 	height: 200px;
 	margin: 50px;
 }
