@@ -512,6 +512,7 @@ header{
 	transition-duration: 250ms;
 }
 #profile-section.openProfile{
+   transition-delay: 250ms;
 	transition-duration: 250ms;
 	max-height: 230px;
 	max-width: 250px;
