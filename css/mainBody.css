@@ -1,8 +1,8 @@
 /* FONTS */
-@font-face{
+/* @font-face{
 	font-family: Ubuntu;
 	src: url('/font/Ubuntu-Regular.ttf');
-}
+} */
 
 /* EVERYTHING */
 *{
@@ -20,7 +20,8 @@ html, body{
 	max-height: 100vh;
 	/* min-height: 500px; */
 	overflow-x: hidden;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
+	/* font-family: 'Open Sans', sans-serif; */
 	/* font-family: Ubuntu; */
 }
 body{
@@ -36,7 +37,7 @@ body{
 	left: 0;
 	height: 100vh;
 	width: 100vw;
-	opacity: 0.8;
+	opacity: 0.85;
 	background: url('/img/msu.jpg') no-repeat center;
 	background-size: cover;
 }
@@ -495,7 +496,7 @@ header{
 
 /* PROFILE SECTION */
 #profile-section{
-	z-index: 1000;
+	z-index: 30;
 	position: absolute;
 	top: 55px;
 	right: 15px;
@@ -613,8 +614,8 @@ header{
 	height: 0;
 }
 #in-main-container{
-	z-index: 20;
-	border: 3px red dashed;
+	z-index: 50;
+	/* border: 3px red dashed; */
 	position: absolute;
 	top: 0;
 	left: 25vw;
@@ -648,13 +649,7 @@ header{
 	width: 100%;
 	overflow: scroll;
 }
-.draft{
-	border: 3px green solid;
-	background: white;
-	width: 300px;
-	height: 200px;
-	margin: 50px;
-}
+
 
 
 
