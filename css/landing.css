@@ -1,17 +1,143 @@
-/* FONTS */
-@font-face{
-	font-family: Ubuntu;
-	src: url('/font/Ubuntu-Regular.ttf');
+/* icons */
+.icon{
+	background-image: url('/icon/speed.svg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
-/* EVERYTHING */
-*{
-	margin: 0;
-	padding: 0;
-	border: 0;
-	box-sizing: border-box;
+#main-section{
+	padding: 10px;
+	
+	font-family: 'Source Sans Pro', sans-serif;
+}
+/* title */
+#main-section h2{
+	font-size: 25px;
+	font-weight: 500;
+	color: #333;
+	margin: 5px 0 10px 0;
 }
 
-/* HTML BODY */
+/* path */
+#path{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	background: #D2D6DE;
+	width: 100%;
+	height: 30px;
+	font-size: 12px;
+	font-weight: 400;
+	border-radius: 3px;
+	color: #444;
+	opacity: 0.95;
+	margin-bottom: 15px;
+}
+#path .icon{
+	background-image: url('/icon/speed.svg');
+	height: 13px;
+	width: 13px;
+	margin: 0 5px 0 10px;
+}
 
-/* MAIN BG */
+/* announcement */
+#announce{
+	width: 100%;
+	opacity: 0.95;
+	border-radius: 3px;
+	background: /* #fafafa */#F7F9FA;
+	padding: 20px 25px;
+	font-size: 18px;
+	color: #535557;
+	text-align: center;
+	box-shadow: 0 0 10px #838383;
+}
+#cuts{
+	/* border: 1px cyan dashed; */
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 20px 0;
+}
+.cut-item{
+	/* border: 1px orange dashed; */
+	/* flex: 1; */
+	min-width: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+/* links */
+.cut-item a{
+	display: block;
+	/* border: 1px green dashed; */
+	text-decoration: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 175px;
+	min-width: 140px;
+	height: 100px;
+	background: #fff;
+	margin: 10px;
+	opacity: 0.8;
+	border-radius: 5px;
+	background: #FFF;
+	font-weight: 700;
+	font-size: 25px;
+	box-shadow: 0 0 10px #838383;
+	color: #2d366e;
+}
+.cut-item a:visited{
+	color: #2d366e;
+}
+/* icons */
+.cut-item .icon{
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 30px;
+	width: 30px;
+	margin-bottom: 10px;
+}
+#cuts .my-acc .icon{
+	background-image: url('/icon/g.svg');
+}
+#cuts .mail .icon{
+	background-image: url('/icon/mail.svg');
+}
+#cuts .cor .icon{
+	background-image: url('/icon/cor.svg');
+}
+#cuts .grades .icon{
+	background-image: url('/icon/grades.svg');
+}
+#cuts .inc-grade .icon{
+	background-image: url('/icon/inc.svg');
+}
+#cuts .e-learning .icon{
+	background-image: url('/icon/vle.svg');
+}
+#cuts .e-lib .icon{
+	background-image: url('/icon/elib.svg');
+}
+
+
+
+
+@media screen and (min-width: 800px){
+	#main-section{
+		transition-duration: 500ms;
+		padding: 1vw;
+	}
+	#path, #announce, #cuts{
+		transition-duration: 500ms;
+		width: 73vw;
+	}
+	#path.openMenu, #announce.openMenu, #cuts.openMenu{
+		transition-duration: 500ms;
+		width: 91vw;
+	}
+}
