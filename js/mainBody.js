@@ -3,6 +3,8 @@ let isMobile = window.innerWidth < 800;
 //menu states
 let pcMenu = true;
 let mobileMenu = false;
+//profile state
+let profileShown = false;
 
 //all menu elements
 let menuElmnts = document.querySelectorAll('.menu-lmnt');
@@ -13,14 +15,11 @@ let navBtn = document.querySelector('#student-nav');
 // toggling profile
 //get profile elements
 let profElmnts = document.querySelectorAll('.profile-lmnt');
-console.log(profElmnts)
+// console.log(profElmnts)
 //profile toggle button
 let profBtn = document.querySelector('#profile-button');
 //main section container
 let main = document.querySelector('#in-main-container');
-
-
-
 
 
 // MENU
@@ -39,9 +38,14 @@ function toggleMenu(){
 		document.querySelector('#student-nav .arrow').classList.remove('openStudentNav');
 		document.querySelector('#nav-list').classList.remove('openStudentNav');
 	}
-	//close profile
-	for (let i = 0; i < profElmnts.length; i++) {
-		profElmnts[i].classList.remove('openProfile')
+	//close profile on mobile
+	if(isMobile){
+		for (let i = 0; i < profElmnts.length; i++) {
+			profElmnts[i].classList.remove('openProfile');
+		}
+			
+		profileShown = false;
+		document.querySelector('#in-main-container').style.zIndex = '50';
 	}
 }
 
@@ -93,6 +97,9 @@ function openProfile(){
 		profElmnts[i].classList.toggle('openProfile')
 	}
 	
+	profileShown = !profileShown;
+	document.querySelector('#in-main-container').style.zIndex = (profileShown) ? '0' : '50';
+	
 	//close menu
 	if(isMobile){
 		for(let i = 0 ; i < menuElmnts.length ; i++){
@@ -107,4 +114,7 @@ main.addEventListener('click', ()=>{
 	for (let i = 0; i < profElmnts.length; i++) {
 		profElmnts[i].classList.remove('openProfile')
 	}
+	
+	profileShown = false;
+	document.querySelector('#in-main-container').style.zIndex = '50';
 }, false)
